@@ -9,3 +9,4 @@
   <p>Joined On: <%= @user.created_at %></p>
 </div>
 <%= link_to "Edit", edit_user_path(@user) %>
+<%= link_to "Delete", @owner, method: :delete %>

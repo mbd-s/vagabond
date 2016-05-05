@@ -22,6 +22,10 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by_id(params[:id])
   end
+  def destroy
+    @user = User.find_by_id(params[:id]).destroy
+    redirect_to root_path
+  end
 
   private
 
