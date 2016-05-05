@@ -1,12 +1,13 @@
 <h1>User#show</h1>
 <div>
+  <img src="<%= @user.image %>">
+  <br>
   <p>First Name: <%= @user.first_name %></p>
   <p>Last Name: <%= @user.last_name %></p>
   <p>Email: <%= @user.email %></p>
-  <p>Password: <%= @user.password_digest %> </p>
   <p>Current City: <%= @user.current_city %></p>
-  <p>Image Link: <%= @user.image %></p>
-  <p>Joined On: <%= @user.created_at %></p>
+  <p>Joined On: <%= @user.created_at.strftime("%m/%d/%Y") %></p>
+
 </div>
 <%= link_to "Edit", edit_user_path(@user) %>
 <%= link_to "Delete", @owner, method: :delete %>
@@ -16,9 +17,15 @@
 </p>
 <div>
   <% for post in @posts %>
-  <li>
-    <%= post.content %>
-  </li>
+  <div>
+    Title: <%= post.title %>
+  </div>
+  <div>
+
+
+    Description: <%= post.content %>
+    </div>
     <% end %>
+  </div>
 </div>
 <%= link_to "Add Post", new_user_post_path(@user) %>

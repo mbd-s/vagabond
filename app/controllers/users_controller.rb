@@ -20,14 +20,19 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+
   def show
     @user = User.find_by_id(params[:id])
     @posts = @user.posts
   end
-  def destroy
-    @user = User.find_by_id(params[:id]).destroy
-    redirect_to root_path
-  end
+
+
+  # @join = @user.created_at.strftime("%m/%d/%Y")
+  # Deleting user is a 'bonus' feature
+  # def destroy
+  #   @user = User.find_by_id(params[:id]).destroy
+  #   redirect_to root_path
+  # end
 
   private
 
