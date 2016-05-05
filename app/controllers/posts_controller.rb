@@ -3,12 +3,16 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @user = User.find(params[:user_id])
   end
 
   def create
+    @user = User.find(params[:user_id])
     post = Post.new(post_params)
     if post.save
-    redirect_to post_path(post)
+      #@user.posts is an array
+      @user.posts << post
+    redirect_to user_path(@user)
     else
     flash[:error] = post.errors
     redirect_to new_post_path
