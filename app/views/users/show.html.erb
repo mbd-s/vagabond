@@ -10,3 +10,15 @@
 </div>
 <%= link_to "Edit", edit_user_path(@user) %>
 <%= link_to "Delete", @owner, method: :delete %>
+
+<p>
+  This is the user's post test
+</p>
+<div>
+  <% for post in @posts %>
+  <li>
+    <%= post.content %>
+  </li>
+    <% end %>
+</div>
+<%= link_to "Add Post", new_user_post_path(@user) %>
