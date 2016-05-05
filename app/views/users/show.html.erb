@@ -16,7 +16,7 @@
     <div>
       <% for post in @posts %>
         <div>
-          <strong><%= post.title %></strong>
+          <strong><%= link_to "#{post.title}", user_post_path(@user, post) %></strong>
           <br>
           <%= post.content %>
         </div>

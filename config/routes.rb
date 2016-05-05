@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'postsusers/show'
+
   root 'cities#index'
 
   resources :cities
