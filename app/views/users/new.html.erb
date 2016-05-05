@@ -1,0 +1,17 @@
+<h3>Sign Up</h3>
+
+<%= form_for @user do |f| %>
+  <div>
+    <%= f.text_field :first_name, placeholder: "First Name" %>
+  </div><br>
+  <div>
+    <%= f.text_field :last_name, placeholder: "Last Name" %>
+  </div><br>
+  <div>
+    <%= f.text_field :email, placeholder: "Email" %>
+  </div><br>
+  <div>
+    <%= f.password_field :password, placeholder: "Password" %>
+  </div><br>
+  <%= f.submit "Sign Up" %>
+<% end %>
