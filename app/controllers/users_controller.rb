@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def new
     @user = User.new
+
   end
 
   def create
@@ -19,9 +20,14 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+
   def show
     @user = User.find_by_id(params[:id])
+    @posts = @user.posts
   end
+
+
+  # @join = @user.created_at.strftime("%m/%d/%Y")
   # Deleting user is a 'bonus' feature
   # def destroy
   #   @user = User.find_by_id(params[:id]).destroy
