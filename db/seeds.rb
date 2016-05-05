@@ -1,36 +1,8 @@
-
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-#Users
-# User.destroy_all
-# User.create([
-#               {:first_name=>"Mickey", :last_name=>"Mouse", :email=>"mickey@gmail.com", :current_city=>"Los Angeles",
-#               :image=> "http://www.renders-graphiques.fr/image/upload/normal/Mickey_004.png"}
-#   ])
-
-
-#Posts
-# Post.destroy_all
-# Post.create([
-#               {:title=>, :content=>}
-#   ])
-
-#Cities
-
-
-# Speaker.destroy_all
-#
-# speakers_data = [
-#     {:first=>"Cory", :last=>"Fauver", :email=>"cory@example.com"},
-#     {:first=>"Juliana", :last=>"Lopker", :email=>"juliana@example.com"},
-#     {:first=>"Will", :last=>"Cauthen", :email=>"will@example.com"},
-#     {:first=>"Nick", :last=>"Brennan", :email=>"nick@example.com"}
-# ]
-#
-# Speaker.create(speakers_data)
-#
-
-# p "Created #{Speaker.count} records"
+City.destroy_all
+cities = City.create([{ name: 'San Francisco' }, { name: 'London' }, { name: 'Gibraltar' },
+   { name: 'Berlin' }, { name: 'New York City' }, { name: 'Paris' }, { name: 'Moscow' },
+   { name: 'Tokyo' }, { name: 'Cairo' }, { name: 'Los Angeles' }, { name: 'Mexico City' },
+   { name: 'Mumbai' }, { name: 'Lagos' }, { name: 'Chicago' }, { name: 'Detroit' },
+   { name: 'Beijing' }, { name: 'Barcelona' }, { name: 'Copenhagen' }, { name: 'Athens' },
+   { name: 'Sao Paulo' }, { name: 'Istanbul' }, { name: 'Washington, D.C.' }, { name: 'Sunnyvale' }])
+p "Created #{City.count} records"
