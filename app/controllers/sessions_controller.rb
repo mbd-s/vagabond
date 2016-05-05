@@ -5,9 +5,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-    #this method is called when the user logs in, it looks up the user's record
-    #in †he db and validates that the password matches
-    user_params = params.require(:user).permit(:email, :password)
     #confrim is an instance method of user (in the user model)
     @user = User.confirm(user_params)
     if @user
@@ -21,6 +18,14 @@ class SessionsController < ApplicationController
   def destroy
     logout # this method lives in the SessionsHelper!
     redirect_to root_path
+  end
+
+  private
+  
+  def user_params
+    #this method is called when the user logs in, it looks up the user's record
+    #in †he db and validates that the password matches
+    params.require(:user).permit(:email, :password)
   end
 
 end
