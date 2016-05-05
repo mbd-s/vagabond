@@ -1,4 +1,5 @@
-<%= form_for @post do |f| %>
+<!-- same as saying push @post to @user.posts array -->
+<%= form_for [@user, @post] do |f| %>
   <div class="form-group">
     <%= f.text_field :title, class: "form-control", placeholder: "Title", autofocus: true %>
   </div>

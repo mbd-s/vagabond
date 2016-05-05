@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   root 'cities#index'
 
   resources :cities
-  resources :users
-  resources :posts
+  resources :users do
+    resources :posts
+  end
 
   get "/login", to: "sessions#new"
   get "/logout", to: "sessions#destroy"
