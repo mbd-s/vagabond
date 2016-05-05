@@ -13,7 +13,10 @@
 
 
 #Posts
-
+# Post.destroy_all
+# Post.create([
+#               {:title=>, :content=>}
+#   ])
 
 #Cities
 
