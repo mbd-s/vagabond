@@ -1,31 +1,28 @@
-<h1>User#show</h1>
-<div>
-  <img class="profile_img" src="<%= @user.image %>">
-  <br>
-  <p>First Name: <%= @user.first_name %></p>
-  <p>Last Name: <%= @user.last_name %></p>
-  <p>Email: <%= @user.email %></p>
-  <p>Current City: <%= @user.current_city %></p>
-  <p>Joined On: <%= @user.created_at.strftime("%m/%d/%Y") %></p>
-
-</div>
-<%= link_to "Edit", edit_user_path(@user) %>
-<%= link_to "Delete", @owner, method: :delete %>
-
-<p>
-  This is the user's post test
-</p>
-<div>
-  <% for post in @posts %>
-  <div>
-    Title: <%= link_to "#{post.title}", user_post_path(@user, post) %>
-  </div>
-  <div>
-
-
-    Description: <%= post.content %>
+<div class="row">
+  <div class="col-sm-6">
+    <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+    <div>
+      <img class="profile_img" src="<%= @user.image %>">
+      <br>
+      <p><strong>Email:</strong> <%= @user.email %></p>
+      <p><strong>Current city:</strong> <%= @user.current_city %></p>
+      <p><strong>Joined:</strong> <%= @user.created_at.strftime("%B %e, %Y") %></p>
     </div>
-    <% end %>
+    <%= button_to "Edit profile", edit_user_path(@user), method: 'get', class: 'btn btn-warning' %>
   </div>
+
+  <div class="col-sm-6">
+    <h3><strong>Posts:</strong></h3>
+    <div>
+      <% for post in @posts %>
+        <div>
+          <strong><%= link_to "#{post.title}", user_post_path(@user, post) %></strong>
+          <br>
+          <%= post.content %>
+        </div>
+      <% end %>
+      <%= button_to "Add Post", new_user_post_path(@user), method: 'get', class: 'btn btn-primary' %>
+    </div>
+  </div>
+
 </div>
-<%= link_to "Add Post", new_user_post_path(@user) %>
