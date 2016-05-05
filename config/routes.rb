@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   resources :users
   resources :posts
 
+  get "/login", to: "sessions#new"
+  get "/logout", to: "sessions#destroy"
+  post "/sessions", to: "sessions#create"
+
 end
 
 #    cities GET    /cities(.:format)          cities#index
