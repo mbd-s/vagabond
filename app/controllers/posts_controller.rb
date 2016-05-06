@@ -33,7 +33,7 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     post.update_attributes(post_params)
     @user = User.find(params[:user_id])
-    redirect_to user_post_path(post, @user)
+    redirect_to user_post_path(@user, post)
   end
 
 
