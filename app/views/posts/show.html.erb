@@ -3,6 +3,8 @@
 <p><strong>Name:</strong> <%= @post.title %>
   <br />
 <%= @post.content %>
+<br />
+<%= @user.first_name %> <%= @user.last_name %>
 </p>
 
 <%= link_to "Edit", edit_user_post_path %>
