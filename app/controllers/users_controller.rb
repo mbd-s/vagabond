@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
   def edit
     set_user
-    @cities = City.all
+    @drop = cities_drop_down
   end
   def update
     set_user
@@ -27,10 +27,12 @@ class UsersController < ApplicationController
   end
 
   def cities_drop_down
+    arr = []
     @cities = City.all
     @cities.each do |c|
-      c.name
+      arr.push(c.name)
     end
+    arr
   end
 
   # Deleting user is a 'bonus' feature
