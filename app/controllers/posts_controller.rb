@@ -1,13 +1,11 @@
 class PostsController < ApplicationController
-
+  before_filter :set_user
 
   def new
     @post = Post.new
-    @user = User.find(params[:user_id])
   end
 
   def create
-    @user = User.find(params[:user_id])
     post = Post.new(post_params)
     if post.save
       #@user.posts is an array
@@ -20,19 +18,16 @@ class PostsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
   end
 
   def edit
     @post = Post.find(params[:id])
-    @user = User.find(params[:user_id])
   end
 
   def update
     post = Post.find(params[:id])
     post.update_attributes(post_params)
-    @user = User.find(params[:user_id])
     redirect_to user_post_path(@user, post)
   end
 
@@ -40,5 +35,9 @@ class PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(:title, :content)
+  end
+
+  def set_user
+    @user = User.find(params[:user_id])
   end
 end
