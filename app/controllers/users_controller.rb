@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def new
     @user = User.new
+    @drop = cities_drop_down
   end
 
   def create
@@ -14,7 +15,7 @@ class UsersController < ApplicationController
   end
   def update
     set_user
-    if @user.update(user_params)
+    if @user.update_attributes(user_params)
       redirect_to @user
     else
       render :edit
@@ -44,7 +45,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :first_name, :last_name, :current_city, :avatar, :password)
+    params.require(:user).permit(:email, :first_name, :last_name, :avatar, :password, :city_id)
   end
   def set_user
     user_id = params[:id]
