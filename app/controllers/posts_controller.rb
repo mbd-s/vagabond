@@ -9,10 +9,10 @@ class PostsController < ApplicationController
     post = Post.new(post_params)
     if post.save
       #@user.posts is an array
-      @user.posts << post
-    redirect_to user_path(@user)
+      @city.posts << post
+    redirect_to user_path(@city)
     else
-    flash[:error] = post.errors
+    flash[:error] = @post.errors
     redirect_to new_post_path
     end
   end
@@ -31,13 +31,12 @@ class PostsController < ApplicationController
     redirect_to user_post_path(@user, post)
   end
 
-
   private
   def post_params
     params.require(:post).permit(:title, :content)
   end
 
   def set_user
-    @user = User.find(params[:user_id])
+    @user = current_user
   end
 end

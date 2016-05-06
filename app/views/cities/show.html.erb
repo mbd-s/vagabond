@@ -13,5 +13,5 @@
     <%= post.content %>
   </div>
   <% end %>
-
+  <%= button_to "Add Post", new_city_post_path(@city), method: 'get', class: 'btn btn-primary' %>
 </div>
