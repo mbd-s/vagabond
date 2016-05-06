@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   end
   def edit
     set_user
+    @cities = City.all
   end
   def update
     set_user
@@ -23,6 +24,13 @@ class UsersController < ApplicationController
   def show
     set_user
     @posts = @user.posts
+  end
+
+  def cities_drop_down
+    @cities = City.all
+    @cities.each do |c|
+      c.name
+    end
   end
 
   # Deleting user is a 'bonus' feature
