@@ -1,3 +1,10 @@
 <p>
   Welcome to <strong>Vagabond</strong>.
 </p>
+
+
+<% for city in @cities %>
+<div>
+  <%= link_to "#{city.name}", city_path(city)  %>
+</div>
+<% end %>

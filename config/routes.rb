@@ -3,7 +3,10 @@ Rails.application.routes.draw do
 
   root 'cities#index'
 
-  resources :cities
+  resources :cities do
+    resources :posts
+  end
+    
   resources :users do
     resources :posts
   end
