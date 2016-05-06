@@ -7,8 +7,9 @@
     <%= f.text_field :last_name, placeholder: "Last Name" %>
   </div>
   <div>
-    <%= f.text_field :current_city, placeholder: "Current City" %>
+    <%= f.select :city, @drop %>
   </div>
+
   <div>
     <%= f.text_field :email, placeholder: "Email" %>
   </div>
