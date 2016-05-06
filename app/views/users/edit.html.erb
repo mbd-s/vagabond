@@ -1,5 +1,5 @@
-<h1>User#edit</h1>
-<%= form_for @user do |f| %>
+<h1>User#edit fejlafjew</h1>
+<%= form_for [@user, @city] do |f| %>
   <div>
     <%= f.text_field :first_name, placeholder: "First Name" %>
   </div>
@@ -7,7 +7,7 @@
     <%= f.text_field :last_name, placeholder: "Last Name" %>
   </div>
   <div>
-    <%= f.text_field :current_city, placeholder: "Current City" %>
+    <%= f.select :current_city, [@city] %>
   </div>
   <div>
     <%= f.text_field :email, placeholder: "Email" %>
