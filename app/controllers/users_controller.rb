@@ -9,13 +9,15 @@ class UsersController < ApplicationController
       login(@user)
       redirect_to @user
     else
-      render :new
+      flash[:error] = @user.errors
+      redirect_to new_user_path
     end
   end
 
   def edit
     set_user
   end
+
   def update
     set_user
     if @user.update_attributes(user_params)
