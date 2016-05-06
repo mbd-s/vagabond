@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def new
     @user = User.new
-
   end
 
   def create
@@ -10,10 +9,10 @@ class UsersController < ApplicationController
     redirect_to @user
   end
   def edit
-    @user = User.find_by_id(params[:id])
+    set_user
   end
   def update
-    @user = User.find_by_id(params[:id])
+    set_user
     if @user.update(user_params)
       redirect_to @user
     else
@@ -22,12 +21,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by_id(params[:id])
+    set_user
     @posts = @user.posts
   end
 
-
-  # @join = @user.created_at.strftime("%m/%d/%Y")
   # Deleting user is a 'bonus' feature
   # def destroy
   #   @user = User.find_by_id(params[:id]).destroy
@@ -39,5 +36,8 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:email, :first_name, :last_name, :current_city, :image, :password)
   end
-
+  def set_user
+    user_id = params[:id]
+    @user = User.find_by_id(user_id)
+  end
 end
