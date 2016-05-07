@@ -8,9 +8,11 @@
       <p><strong>Current City:</strong> <%= @city %></p>
       <p><strong>Joined:</strong> <%= @user.created_at.strftime("%B %e, %Y") %></p>
     </div>
-    <div>
-    <%= button_to "Edit profile", edit_user_path(@user), method: 'get', class: 'btn btn-warning' %>
-    </div>
+    <% if current_user && current_user == @user %>
+      <div>
+        <%= button_to "Edit profile", edit_user_path(@user), method: 'get', class: 'btn btn-warning' %>
+      </div>
+    <% end %>
   </div>
 
   <div class="col-sm-6">
@@ -22,7 +24,9 @@
           <br>
           <%= post.content %>
         </div>
+        <% if current_user && current_user == @user %>
         <%= link_to "Delete", "#{@user.id}/posts/#{post.id}", method: :delete, data: {confirm: "Are you sure you want to delete #{post.title}?"} %>
+        <% end %>
         <hr>
       <% end %>
     </div>
