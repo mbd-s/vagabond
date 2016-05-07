@@ -35,9 +35,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    set_user
-    @city = City.find(@user.city_id).name
-    @posts = @user.posts
+    if current_user
+      set_user
+      @city = City.find(@user.city_id).name
+      @posts = @user.posts
+    else
+      redirect_to root_path
+    end
   end
 
   # Deleting user is a 'bonus' feature

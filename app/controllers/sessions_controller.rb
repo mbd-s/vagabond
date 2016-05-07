@@ -1,7 +1,11 @@
 class SessionsController < ApplicationController
   def new
-    @user = User.new
-    render :new
+    if current_user
+      redirect_to user_path(current_user)
+    else
+      @user = User.new
+      render :new
+    end
   end
 
   def create
@@ -21,7 +25,7 @@ class SessionsController < ApplicationController
   end
 
   private
-  
+
   def user_params
     #this method is called when the user logs in, it looks up the user's record
     #in †he db and validates that the password matches
