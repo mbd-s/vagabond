@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def new
     @user = User.new
-    @drop = cities_drop_down
   end
 
   def create
@@ -17,7 +16,6 @@ class UsersController < ApplicationController
 
   def edit
     set_user
-    @drop = cities_drop_down
   end
 
   def update
@@ -31,16 +29,8 @@ class UsersController < ApplicationController
 
   def show
     set_user
+    @city = City.find(@user.city_id).name
     @posts = @user.posts
-  end
-
-  def cities_drop_down
-    arr = []
-    @cities = City.all
-    @cities.each do |c|
-      arr.push(c.name)
-    end
-    arr
   end
 
   # Deleting user is a 'bonus' feature

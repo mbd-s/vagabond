@@ -1,19 +1,19 @@
-<h1>User#edit</h1>
+<h2>Edit User Information</h2>
 <%= form_for @user do |f| %>
   <div>
     <%= f.text_field :first_name, placeholder: "First Name" %>
-  </div>
+  </div><br>
   <div>
     <%= f.text_field :last_name, placeholder: "Last Name" %>
-  </div>
+  </div><br>
   <div>
-    <%= f.select :city, @drop %>
-  </div>
+    <%= f.collection_select :city_id, City.all, :id, :name %>
+  </div><br>
   <div>
     <%= f.text_field :email, placeholder: "Email" %>
-  </div>
+  </div><br>
   <div>
     <%= f.file_field :avatar, placeholder: "Avatar" %>
-  </div>
+  </div><br>
   <%= f.submit %>
 <% end %>
