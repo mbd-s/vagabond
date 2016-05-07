@@ -8,7 +8,9 @@
       <p><strong>Current City:</strong> <%= @city %></p>
       <p><strong>Joined:</strong> <%= @user.created_at.strftime("%B %e, %Y") %></p>
     </div>
+    <div>
     <%= button_to "Edit profile", edit_user_path(@user), method: 'get', class: 'btn btn-warning' %>
+    </div>
   </div>
 
   <div class="col-sm-6">
@@ -20,6 +22,8 @@
           <br>
           <%= post.content %>
         </div>
+        <%= link_to "Delete", "#{@user.id}/posts/#{post.id}", method: :delete %>
+        <hr>
       <% end %>
     </div>
   </div>

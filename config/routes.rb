@@ -7,11 +7,14 @@ Rails.application.routes.draw do
     resources :posts
   end
 
-  resources :users
+  resources :users do
+    resources :posts
+  end
 
   get "/login", to: "sessions#new"
   get "/logout", to: "sessions#destroy"
   post "/sessions", to: "sessions#create"
+  #delete "/cities/:city_id/posts/:id", to:"posts#destroy", as: "delete_city_post"
 
 end
 

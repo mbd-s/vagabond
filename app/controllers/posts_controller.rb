@@ -24,6 +24,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     user_id = @post.user_id
     @author = User.find(user_id)
+    #@city = City.find(params[:city_id])
 
   end
 
@@ -39,9 +40,16 @@ class PostsController < ApplicationController
     redirect_to city_post_path
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    flash[:notice] = "Successfully deleted"
+    redirect_to user_path(current_user)
+  end
+
   private
   def post_params
-    params.require(:post).permit(:title, :content, :city_id)
+    params.require(:post).permit(:title, :content, :city_id, :user_id)
   end
 
   def set_user
