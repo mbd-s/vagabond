@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   def update
     post = Post.find(params[:id])
     post.update_attributes(post_params)
-    redirect_to user_post_path(@user, post)
+    redirect_to city_post_path(@city, post)
   end
 
   private

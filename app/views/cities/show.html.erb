@@ -7,7 +7,7 @@
 <div>
   <% for post in @posts %>
   <div>
-    <%= post.title %>
+    <%= link_to "#{post.title}", city_post_path(@city, post) %>
   </div>
   <div>
     <%= post.content %>
