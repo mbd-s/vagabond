@@ -23,12 +23,14 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    city_id = params[:id]
+    @city = City.find_by(id: city_id)
   end
 
   def update
     post = Post.find(params[:id])
     post.update_attributes(post_params)
-    redirect_to city_post_path(@city, post)
+    redirect_to city_post_path
   end
 
   private
