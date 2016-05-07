@@ -8,7 +8,7 @@
     <%= f.text_field :last_name, placeholder: "Last Name" %>
   </div><br>
   <div>
-    <%= f.select :city, @drop %>
+    <%= f.collection_select :city_id, City.all, :id, :name %>
   </div><br>
   <div>
     <%= f.text_field :email, placeholder: "Email" %>
