@@ -6,10 +6,8 @@ Rails.application.routes.draw do
   resources :cities do
     resources :posts
   end
-    
-  resources :users do
-    resources :posts
-  end
+
+  resources :users
 
   get "/login", to: "sessions#new"
   get "/logout", to: "sessions#destroy"
