@@ -5,7 +5,7 @@
 </div>
 
 <div>
-  <% for post in @posts %>
+  <% @posts.reverse_each do |post| %>
   <div>
     <%= link_to "#{post.title}", city_post_path(@city, post) %>
   </div>
