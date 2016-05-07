@@ -8,7 +8,9 @@
       <p><strong>Current City:</strong> <%= @city %></p>
       <p><strong>Joined:</strong> <%= @user.created_at.strftime("%B %e, %Y") %></p>
     </div>
-    <%= button_to "Edit profile", edit_user_path(@user), method: 'get', class: 'btn btn-warning' %>
+    <% if current_user && current_user == @user %>
+      <%= button_to "Edit profile", edit_user_path(@user), method: 'get', class: 'btn btn-warning' %>
+    <% end %>
   </div>
 
   <div class="col-sm-6">
