@@ -16,7 +16,7 @@
     <div>
       <% for post in @posts %>
         <div>
-          <strong><%= link_to "#{post.title}", user_post_path(@user, post) %></strong>
+          <strong><%= link_to "#{post.title}", city_post_path(@city, post) %></strong>
           <br>
           <%= post.content %>
         </div>
