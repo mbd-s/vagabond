@@ -3,17 +3,20 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @city = City.find(params[:city_id])
+    @user = current_user
   end
 
   def create
     post = Post.new(post_params)
+    @city = City.find(params[:city_id])
+    post.user = current_user
+    post.city = @city
     if post.save
-      #@user.posts is an array
-      @city.posts << post
-    redirect_to user_path(@city)
+      redirect_to city_path(@city)
     else
-    flash[:error] = @post.errors
-    redirect_to new_post_path
+      flash[:error] = @post.errors
+      redirect_to new_post_path
     end
   end
 
@@ -38,7 +41,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, :city_id)
   end
 
   def set_user
