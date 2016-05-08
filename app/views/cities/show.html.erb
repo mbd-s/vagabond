@@ -1,30 +1,39 @@
 <div class="outer">
     <%= image_tag(@city.image, :width => 1440, :height => 500) %>
   <h1 class="city_text"><span><%= @city.name %></h1></span>
+  <%= button_to "Add New Post", new_city_post_path(@city), method: 'get', class: 'btn btn-primary add-post' %>
 </div>
 
 <!-- row of posts -->
+<div class="container">
 <% @post.reverse_each do |post| %>
   <div class="row">
+    <div class="col-md-12">
     <!-- 2 columns, 1 for picture and 1 for posts -->
-    <div class="col-md-2">
-      <section class="post_avatar">
-        <%= link_to image_tag(User.find_by_id(post.user_id).avatar.url(:medium)) %>
-      </section>
+    <div class="one_post">
+    <div class="col-sm-4">
+      <div class="profile">
+        <%= link_to image_tag(User.find_by_id(post.user_id).avatar, :width => 250, :class => 'img-circle'), user_path(User.find_by_id(post.user_id)) %>
+        <p>Written By: <%= link_to ("#{User.find_by_id(post.user_id).first_name} #{User.find_by_id(post.user_id).last_name}"), user_path(User.find_by_id(post.user_id)) %> </p>
+      </div>
     </div>
 
-    <div class="col-lg-8 well">
+    <div class="col-sm-8">
+      <div class="post">
       <h1><%= link_to post.title, city_post_path(@city, post) %></h1>
-      <h4><%= post.content %></h4>
-
-      <p>
-        <span class='quiet'><small> Written by <%= link_to "#{User.find_by_id(post.user_id).first_name} #{User.find_by_id(post.user_id).last_name}", user_path(User.find_by_id(post.user_id)) %> </small></span>
-      </p>
       <p>
         <span class='quiet'><small> <%= time_ago_in_words(post.created_at) %> ago </small></span>
       </p>
+      <p><%= post.content %></p>
+
+
     </div>
+
   </div>
-  <hr />
-<% end %>
-<%= button_to "Add Post", new_city_post_path(@city), method: 'get', class: 'btn btn-primary' %>
+
+</div>
+  <% end %>
+  </div>
+
+</div>
+</div>
