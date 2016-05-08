@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+body {
+  font-family: 'Noto Sans', sans-serif;
+  background-color: black;
+}
+.top-header {
+  color: white;
+}
+.font_style {
+  color: white;
+}
+
+.font_style:hover{
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+}
