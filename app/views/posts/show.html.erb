@@ -7,7 +7,7 @@
   <div class="col-md-12">
   <div class="col-sm-4">
     <div class = "profile">
-      <%= link_to image_tag(@author.avatar, :width => 250, :height => 250, :class=>'img-circle'), user_path(@author) %>
+      <%= link_to image_tag(@author.avatar, :width => 250, :class=>'img-circle'), user_path(@author) %>
 <p><%= link_to "#{@author.first_name} #{@author.last_name}", user_path(@author) %></p>
 <p><strong>Current City:</strong> <%= @user_city %></p>
 <p><strong>Joined: <%= @author.created_at.strftime("%B %e, %Y") %></p>
