@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Vagabond</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
-</head>
-<body>
-    <!-- check if the user is logged in -->
-  <div class="row top-header">
-<div class="col-sm-6">
-<div class="pull-left">
-  <%= link_to "Vagabond", root_path, class:'font_style' %>
-</div>
-</div>
-<div class="col-sm-6">
-  <div class="pull-right">
-    <% if current_user %>
-    <%= link_to "Cities", root_path, class:'font_style' %> |
-      <%= link_to "Profile", user_path(current_user), class:'font_style' %> | <%= link_to "Log Out", logout_path, class:'font_style' %>
-    <% else %>
-      <%= link_to "Sign Up", new_user_path, class:'font_style' %> | <%= link_to "Log In", login_path, class:'font_style' %></li>
-    <% end %>
+  <head>
+    <title>Vagabond</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="row top-header">
+      <div class="col-sm-6">
+        <div class="pull-left">
+          <%= link_to "Home", root_path, class:'font_style' %>
+          <% flash.each do |name, msg| %>
+            <span class="flash-messages">
+              <small> <%= name.capitalize %>: <%= msg %> </small>
+            </span>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="pull-right">
+          <% if current_user %>
+          <%= link_to "Cities", root_path, class:'font_style' %> |
+            <%= link_to current_user.first_name + "'s Profile", user_path(current_user), class:'font_style' %> | <%= link_to "Log Out", logout_path, class:'font_style' %>
+          <% else %>
+            <%= link_to "Sign Up", new_user_path, class:'font_style' %> | <%= link_to "Log In", login_path, class:'font_style' %></li>
+          <% end %>
+        </div>
+      </div>
   </div>
-</div>
-</div>
 
-<%= yield %>
+  <%= yield %>
 
-</body>
+  </body>
 </html>

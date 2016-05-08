@@ -9,12 +9,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    #confrim is an instance method of user (in the user model)
+    #confirm is an instance method of user (in the user model)
     @user = User.confirm(user_params)
     if @user
       login(@user) # <-- login the user
       redirect_to @user # <-- go to show
     else
+      flash[:error] = "Incorrect email and/or password."
       redirect_to login_path
     end
   end
