@@ -9,18 +9,17 @@
     <!-- 2 columns, 1 for picture and 1 for posts -->
     <div class="col-md-2">
       <section class="post_image center">
-
+        <%= User.find_by_id(post.user_id).image %>
       </section>
     </div>
 
     <div class="col-lg-8 well">
       <h1><%= link_to post.title, city_post_path(@city, post) %></h1>
       <h4><%= post.content %></h4>
-      <% for user in @users %>
+
       <p>
-        <span class='quiet'><small> Written by <%= user.first_name %> </small></span>
+        <span class='quiet'><small> Written by <%= link_to "#{User.find_by_id(post.user_id).first_name} #{User.find_by_id(post.user_id).last_name}", user_path(User.find_by_id(post.user_id)) %> </small></span>
       </p>
-     <% end %>
       <p>
         <span class='quiet'><small> <%= time_ago_in_words(post.created_at) %> ago </small></span>
       </p>
