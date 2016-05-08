@@ -3,14 +3,28 @@
   <h1 class="city_text"><span><%= @city.name %></h1></span>
 </div>
 
-<div>
-  <% @post.reverse_each do |post| %>
-  <div>
-    <h2><%= link_to "#{post.title}", city_post_path(@city, post) %></h2>
+<!-- row of posts -->
+<% @post.reverse_each do |post| %>
+  <div class="row">
+    <!-- 2 columns, 1 for picture and 1 for posts -->
+    <div class="col-md-2">
+      <section class="post_image center">
+        <%= User.find_by_id(post.user_id).avatar %>
+      </section>
+    </div>
+
+    <div class="col-lg-8 well">
+      <h1><%= link_to post.title, city_post_path(@city, post) %></h1>
+      <h4><%= post.content %></h4>
+
+      <p>
+        <span class='quiet'><small> Written by <%= link_to "#{User.find_by_id(post.user_id).first_name} #{User.find_by_id(post.user_id).last_name}", user_path(User.find_by_id(post.user_id)) %> </small></span>
+      </p>
+      <p>
+        <span class='quiet'><small> <%= time_ago_in_words(post.created_at) %> ago </small></span>
+      </p>
+    </div>
   </div>
-  <div>
-    <p><%= post.content %></p>
-  </div>
-  <% end %>
-  <%= button_to "Add Post", new_city_post_path(@city), method: 'get', class: 'btn btn-primary' %>
-</div>
+  <hr />
+<% end %>
+<%= button_to "Add Post", new_city_post_path(@city), method: 'get', class: 'btn btn-primary' %>
