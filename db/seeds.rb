@@ -8,8 +8,7 @@
 #   { name: 'Paris', image: 'http://www.technobuffalo.com/wp-content/uploads/2016/02/paris.jpg'},
 #   { name: 'Los Angeles', image: 'http://images.inc.com/uploaded_files/image/1940x900/los-angeles11-44-43_40530.jpg'},
 #   { name: 'Chicago', image: 'http://cdn.acbl.org/wp-content/uploads/2014/08/Chicago3.jpg'},
-#   { name: 'Beijing', image: 'http://suabroad.syr.edu/destinations/beijing/beijingimages/Beijingskyline.jpg'},
-#   { name: 'Washington, D.C', image: 'https://i.ytimg.com/vi/QTZQ9bta31w/maxresdefault.jpg'}
+#   { name: 'Beijing', image: 'http://suabroad.syr.edu/destinations/beijing/beijingimages/Beijingskyline.jpg'}
 #   ])
 
 # User.destroy_all

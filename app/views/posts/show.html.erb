@@ -8,9 +8,9 @@
   <div class="col-sm-4">
     <div class = "profile">
       <%= link_to image_tag(@author.avatar, :width => 250, :class=>'img-circle'), user_path(@author) %>
-<p><%= link_to "#{@author.first_name} #{@author.last_name}", user_path(@author) %></p>
+<p><strong>Written By: </strong><%= link_to "#{@author.first_name} #{@author.last_name}", user_path(@author) %></p>
 <p><strong>Current City:</strong> <%= @user_city %></p>
-<p><strong>Joined: <%= @author.created_at.strftime("%B %e, %Y") %></p>
+<p><strong>Joined: </strong><%= @author.created_at.strftime("%B %e, %Y") %></p>
 
 </div>
 </div>
