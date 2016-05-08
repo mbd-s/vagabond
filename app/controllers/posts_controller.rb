@@ -1,10 +1,12 @@
 class PostsController < ApplicationController
-  before_filter :set_user
-
   def new
-    @post = Post.new
-    @city = City.find(params[:city_id])
-    @user = current_user
+    if current_user
+      @post = Post.new
+      @city = City.find(params[:city_id])
+      @user = current_user
+    else
+      redirect_to root_path
+    end
   end
 
   def create
@@ -21,17 +23,24 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
-    user_id = @post.user_id
-    @author = User.find(user_id)
-    #@city = City.find(params[:city_id])
-
+    if current_user
+      @post = Post.find(params[:id])
+      user_id = @post.user_id
+      @author = User.find(user_id)
+      #@city = City.find(params[:city_id])
+    else
+      redirect_to root_path
+    end
   end
 
   def edit
-    @post = Post.find(params[:id])
-    city_id = params[:id]
-    @city = City.find_by(id: city_id)
+    if current_user
+      @post = Post.find(params[:id])
+      city_id = params[:id]
+      @city = City.find_by(id: city_id)
+    else
+      redirect_to root_path
+    end
   end
 
   def update

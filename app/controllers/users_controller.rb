@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
+  before_filter :set_user, except: [:index, :new, :create]
   def new
-    @user = User.new
+    if current_user
+      redirect_to user_path(current_user)
+    else
+      @user = User.new
+    end
   end
 
   def create
@@ -15,7 +20,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    set_user
+    unless current_user == @user
+      redirect_to user_path(current_user)
+    end
   end
 
   def update
@@ -28,9 +35,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    set_user
-    @city = City.find(@user.city_id).name
-    @posts = @user.posts
+    if current_user
+      set_user
+      @city = City.find(@user.city_id).name
+      @posts = @user.posts
+    else
+      redirect_to root_path
+    end
   end
 
   # Deleting user is a 'bonus' feature

@@ -1,7 +1,6 @@
-<h3><strong>Name:</strong> <%= @post.title %></h3>
+<h1><%= @post.title %></h1>
+<h4>by: <%= @author.first_name %> <%= @author.last_name %> | <%= @post.created_at.strftime("%B %e, %Y") %></h4>
 <p>
 <%= @post.content %>
-<br>
-by: <%= @author.first_name %>
 </p>
 <%= link_to "Edit", edit_city_post_path %>

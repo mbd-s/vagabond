@@ -2,9 +2,15 @@
   Welcome to <strong>Vagabond</strong>.
 </p>
 
+<% if current_user %>
+  <% for city in @cities %>
+  <div>
+    <%= link_to "#{city.name}", city_path(city)  %>
+      <% end %>
+    <% else %>
+    <% for city in @cities %>
+    <li><%= "#{city.name}"  %></li>
+    <% end %>
+  </div>
 
-<% for city in @cities %>
-<div>
-  <%= link_to "#{city.name}", city_path(city)  %>
-</div>
 <% end %>

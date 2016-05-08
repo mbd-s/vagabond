@@ -1,4 +1,4 @@
-<h2><%= @city.name %></h2>
+<h1><%= @city.name %></h1>
 <div>
   <%= image_tag("http://localemagazine.com/wp-content/uploads/2016/03/landmark-bridge-cliff-california.jpeg", width:
   '1300') %>
@@ -7,10 +7,10 @@
 <div>
   <% @posts.reverse_each do |post| %>
   <div>
-    <%= link_to "#{post.title}", city_post_path(@city, post) %>
+    <h2><%= link_to "#{post.title}", city_post_path(@city, post) %></h2>
   </div>
   <div>
-    <%= post.content %>
+    <p><%= post.content %></p>
   </div>
   <% end %>
   <%= button_to "Add Post", new_city_post_path(@city), method: 'get', class: 'btn btn-primary' %>
