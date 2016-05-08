@@ -5,9 +5,9 @@
 <div class="container post">
 <div class="row">
   <div class="col-md-12">
-  <div class="col-sm-6">
+  <div class="col-sm-4">
     <div class = "profile">
-      <img class="profile_img img-circle" src="<%= @author.image %>" >
+      <%= link_to image_tag(@author.avatar, :width => 250, :height => 250, :class=>'img-circle'), user_path(@author) %>
 <p><%= link_to "#{@author.first_name} #{@author.last_name}", user_path(@author) %></p>
 <p><strong>Current City:</strong> <%= @user_city %></p>
 <p><strong>Joined: <%= @author.created_at.strftime("%B %e, %Y") %></p>
@@ -15,8 +15,7 @@
 </div>
 </div>
 
-<div class="row">
-  <div class="col-sm-6">
+  <div class="col-sm-8">
     <div class="post">
       <h1><%= @post.title %></h1>
       <h4><%= @post.created_at.strftime("%B %e, %Y") %></h4>
@@ -28,7 +27,6 @@
       </div>
     </div>
   </div>
-</div>
 </div>
 </div>
 </div>
