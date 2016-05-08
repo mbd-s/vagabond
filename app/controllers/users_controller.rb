@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_filter :set_user, except: [:index, :new, :create]
+  before_filter :logged_in?, except: [:show, :new, :create]
+
   def new
     if current_user
       redirect_to user_path(current_user)
