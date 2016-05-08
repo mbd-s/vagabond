@@ -23,7 +23,7 @@
         <div class="pull-right">
           <% if current_user %>
           <%= link_to "Cities", root_path, class:'font_style' %> |
-            <%= link_to current_user.first_name + "'s Profile", user_path(current_user), class:'font_style' %> | <%= link_to "Log Out", logout_path, class:'font_style' %>
+            <%= link_to current_user.first_name.capitalize + "'s Profile", user_path(current_user), class:'font_style' %> | <%= link_to "Log Out", logout_path, class:'font_style' %>
           <% else %>
             <%= link_to "Sign Up", new_user_path, class:'font_style' %> | <%= link_to "Log In", login_path, class:'font_style' %></li>
           <% end %>
