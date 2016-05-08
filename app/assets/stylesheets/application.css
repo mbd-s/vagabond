@@ -35,3 +35,6 @@ body {
 .flash-messages {
   color: red
 }
+.post_image {
+  width: 250px
+}
