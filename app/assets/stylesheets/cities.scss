@@ -7,8 +7,32 @@
   // }
 
   // $body-bg: transparent;
-.img_size{
-  width: 1465px;
-  width: 600px;
+  .background {
+    background-color: black;
+  }
+  .jumbotron {
+  position: relative;
+  background: black url("https://upload.wikimedia.org/wikipedia/commons/9/95/San_Francisco_Oakland_Bay_Bridge_at_night.jpg") center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: white;
+}
+.text{
+  text-align: center;
+  color: white;
+  font-size: 60px;
+  text-align: center;
+}
+.city_name {
+  color: white;
+  font-size: 60px;
+  text-align: center;
+}
 
+.city_name:hover{
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
 }
