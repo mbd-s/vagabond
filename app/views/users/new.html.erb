@@ -20,8 +20,8 @@
   <div>
     <%= f.password_field :password, placeholder: "Password" %>
   </div><br>
-  <div>
-    <%= f.text_field :image, placeholder: "Profile Image Link" %>
+  <div class='avatar-outer'>
+    <%= f.file_field :avatar, placeholder: "Avatar", class: 'avatar' %>
   </div><br>
   <%= f.submit "Sign Up", class: 'btn btn-warning'%>
 <% end %>
