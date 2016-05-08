@@ -34,3 +34,7 @@ body {
     color: white;
     text-decoration: none;
 }
+
+.flash-messages {
+  color: red
+}
