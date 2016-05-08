@@ -2,7 +2,38 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .profile_img {
-  width: 200px;
-  height: auto;
+  width:250px;
+  height: 250px;
+}
+
+.new_background {
+  background: url(vagabond-background.jpeg) no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+}
+h3 {
+  margin-top: 0px;
+  color: white;
+}
+.outer {
+  position: relative;
+}
+.signup_form {
   border-radius: 20px;
+  background-color: black;
+  width: 30%;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 30%);
+}
+.signup_fields {
+  text-align: center;
+  padding: 20px;
+}
+.dropdown {
+  width: 160px;
+}
+h5 {
+  color: white;
 }

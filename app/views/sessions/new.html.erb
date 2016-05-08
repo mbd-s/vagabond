@@ -1,5 +1,8 @@
-<h3>Login</h3>
-
+<div class="login_background">
+  <div class="outer">
+<div class="login_form">
+  <div class="login_fields">
+<h3>Log In</h3>
 <%= form_for @user, url: "/sessions", method: "post" do |f| %>
   <div>
     <%= f.text_field :email, placeholder: "Email" %>
@@ -7,5 +10,9 @@
   <div>
     <%= f.password_field :password, placeholder: "Password" %>
   </div><br>
-  <%= f.submit "Sign In" %>
+  <%= f.submit "Log In", class: 'btn btn-warning'%>
 <% end %>
+</div>
+</div>
+</div>
+</div>

@@ -1,3 +1,4 @@
+
 <div class="background">
 <div class="jumbotron">
       <div class="header">
@@ -5,20 +6,28 @@
         <p class="lead hero-header">
           Description about the app.....
         </p>
+        <% if current_user %>
+        <% else %>
+        <div class="call_to_action"> To get started <%= link_to "Sign Up Now!", new_user_path, class: 'btn btn-primary'%></div>
+        <% end %>
       </div>
     </div>
 <% if current_user %>
   <% for city in @cities %>
   <div>
-    <div class="text"><%= link_to "#{city.name}", city_path(city), class: 'city_name'%></div>
-<%= link_to image_tag(city.image, :width => 1465, :height => 600), city_path(city) %>
+    <div class="outer">
+      <%= link_to image_tag(city.image, :width => 1440, :height => 600), city_path(city) %>
+      <h1 class="city_home_text"><span><%= link_to "#{city.name}", city_path(city), class: 'city_name'%></h1></span>
+      </div>
       <% end %>
     </div>
     <% else %>
     <% for city in @cities %>
     <div>
-      <div class="text"><%= "#{city.name}"%></div>
-      <%= image_tag(city.image, :width => 1465, :height => 600) %>
+      <div class="outer">
+      <%= image_tag(city.image, :width => 1440, :height => 600) %>
+        <h1 class="city_home_text"><span><%= "#{city.name}"%></h1></span>
+      </div>
     <% end %>
 </div>
 <% end %>
