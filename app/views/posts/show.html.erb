@@ -2,7 +2,7 @@
 <h4>by: <%= @author.first_name %> <%= @author.last_name %> | <%= @post.created_at.strftime("%B %e, %Y") %></h4>
 <p>
 <%= @post.content %>
-</p><br>
+</p>
 <div>
   <%= link_to "Edit", edit_city_post_path %>
 </div>
