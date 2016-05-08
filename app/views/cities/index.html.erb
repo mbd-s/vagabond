@@ -15,15 +15,19 @@
 <% if current_user %>
   <% for city in @cities %>
   <div>
-    <div class="text"><%= link_to "#{city.name}", city_path(city), class: 'city_name'%></div>
-<%= link_to image_tag(city.image, :width => 1440, :height => 600), city_path(city) %>
+    <div class="outer">
+      <%= link_to image_tag(city.image, :width => 1440, :height => 600), city_path(city) %>
+      <h1 class="city_home_text"><span><%= link_to "#{city.name}", city_path(city), class: 'city_name'%></h1></span>
+      </div>
       <% end %>
     </div>
     <% else %>
     <% for city in @cities %>
     <div>
-      <div class="text"><%= "#{city.name}"%></div>
+      <div class="outer">
       <%= image_tag(city.image, :width => 1440, :height => 600) %>
+        <h1 class="city_home_text"><span><%= "#{city.name}"%></h1></span>
+      </div>
     <% end %>
 </div>
 <% end %>

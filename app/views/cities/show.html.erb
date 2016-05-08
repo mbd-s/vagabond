@@ -1,7 +1,6 @@
-<h1><%= @city.name %></h1>
-<div>
-  <%= image_tag(@city.image, width:
-  '1300') %>
+<div class="outer">
+    <%= image_tag(@city.image, :width => 1440, :height => 500) %>
+  <h1 class="city_text"><span><%= @city.name %></h1></span>
 </div>
 
 <div>
