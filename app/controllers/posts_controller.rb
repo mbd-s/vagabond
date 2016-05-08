@@ -27,8 +27,12 @@ class PostsController < ApplicationController
   def show
     if current_user
       @post = Post.find(params[:id])
+      post_city_id = @post.city_id
+      @post_city = City.find(post_city_id)
       user_id = @post.user_id
       @author = User.find(user_id)
+      user_city_id = @author.city_id
+      @user_city = City.find(user_city_id).name
     else
       redirect_to root_path
     end

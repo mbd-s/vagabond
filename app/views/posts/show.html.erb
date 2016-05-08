@@ -1,8 +1,14 @@
+<div class="outer">
+    <%= link_to image_tag(@post_city.image, :width => 1440, :height => 500), city_path(@post_city) %>
+  <h1 class="city_home_text"><span><%= link_to "#{@post_city.name}", city_path(@post_city), class:'city_name' %></h1></span>
+</div>
 <div class="row">
   <div class="col-sm-6">
     <div class = "profile">
       <img class="profile_img img-circle" src="<%= @author.image %>" >
-<h4>by: <%= @author.first_name %> <%= @author.last_name %></h4>
+<h2><%= @author.first_name %> <%= @author.last_name %></h2>
+<p><strong>Current City:</strong> <%= @user_city %></p>
+<p><strong>Joined: <%= @author.created_at.strftime("%B %e, %Y") %></p>
 
 </div>
 </div>
