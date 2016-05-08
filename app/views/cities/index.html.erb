@@ -1,16 +1,22 @@
 <p>
   Welcome to <strong>Vagabond</strong>.
 </p>
-
+<!-- <div class="container"> -->
+  <!-- <div class="col-md-4"> -->
 <% if current_user %>
   <% for city in @cities %>
-  <div>
-    <%= link_to "#{city.name}", city_path(city)  %>
+  <div class ='city'>
+    <%= link_to "#{city.name}", city_path(city)%>
+    <%= link_to image_tag(city.image, :width => 1465, :height => 600), city_path(city) %>
       <% end %>
     <% else %>
     <% for city in @cities %>
-    <li><%= "#{city.name}"  %></li>
+    <div><%= "#{city.name}"  %>
+      <%= image_tag (city.image) %>
+    </div>
     <% end %>
   </div>
 
 <% end %>
+<!-- </div> -->
+<!-- </div> -->
