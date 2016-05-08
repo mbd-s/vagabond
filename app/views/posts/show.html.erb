@@ -1,8 +1,24 @@
-<h1><%= @post.title %></h1>
-<h4>by: <%= @author.first_name %> <%= @author.last_name %> | <%= @post.created_at.strftime("%B %e, %Y") %></h4>
-<p>
-<%= @post.content %>
-</p>
-<div>
-  <%= link_to "Edit", edit_city_post_path %>
+<div class="row">
+  <div class="col-sm-6">
+    <div class = "profile">
+      <img class="profile_img img-circle" src="<%= @author.image %>" >
+<h4>by: <%= @author.first_name %> <%= @author.last_name %></h4>
+
+</div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="post">
+      <h1><%= @post.title %></h1>
+      <h4><%= @post.created_at.strftime("%B %e, %Y") %></h4>
+      <p>
+      <%= @post.content %>
+      </p>
+      <div>
+        <%= link_to "Edit", edit_city_post_path %>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
