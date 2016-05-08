@@ -1,38 +1,9 @@
 // Place all the styles related to the cities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-  // html {
-  //   background: url('vagabond-background.jpeg') no-repeat;
-  //   background-size: cover
-  // }
+  html {
+    background: url('https://images.unsplash.com/photo-1431576901776-e539bd916ba2?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=a0941b28175909ca62f096eb533b0c97') no-repeat;
+    background-size: cover
+  }
 
   // $body-bg: transparent;
-  .background {
-    background-color: black;
-  }
-  .jumbotron {
-  position: relative;
-  background: black url("https://upload.wikimedia.org/wikipedia/commons/9/95/San_Francisco_Oakland_Bay_Bridge_at_night.jpg") center center;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  color: white;
-}
-.text{
-  text-align: center;
-  color: white;
-  font-size: 60px;
-  text-align: center;
-}
-.city_name {
-  color: white;
-  font-size: 60px;
-  text-align: center;
-}
-
-.city_name:hover{
-    background-color: transparent;
-    color: white;
-    text-decoration: none;
-}
