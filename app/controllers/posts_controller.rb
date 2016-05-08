@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_filter :set_user, except: [:index, :new, :create]
+
   def new
     if current_user
       @post = Post.new
@@ -27,14 +29,13 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
       user_id = @post.user_id
       @author = User.find(user_id)
-      #@city = City.find(params[:city_id])
     else
       redirect_to root_path
     end
   end
 
   def edit
-    if current_user
+    if current_user == @user
       @post = Post.find(params[:id])
       city_id = params[:id]
       @city = City.find_by(id: city_id)
@@ -62,6 +63,7 @@ class PostsController < ApplicationController
   end
 
   def set_user
-    @user = current_user
+    user_id = params[:id]
+    @user = User.find_by_id(user_id)
   end
 end
