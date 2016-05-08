@@ -16,9 +16,11 @@
     <div class="col-lg-8 well">
       <h1><%= link_to post.title, city_post_path(@city, post) %></h1>
       <h4><%= post.content %></h4>
+      <% for user in @users %>
       <p>
-        <span class='quiet'><small> Written by <%= @writter.first_name %> </small></span>
+        <span class='quiet'><small> Written by <%= user.first_name %> </small></span>
       </p>
+     <% end %>
       <p>
         <span class='quiet'><small> <%= time_ago_in_words(post.created_at) %> ago </small></span>
       </p>

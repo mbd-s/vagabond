@@ -5,16 +5,17 @@ class CitiesController < ApplicationController
   end
 
   def show
-
-
     if current_user
-      @poster = Post.find(params[:id])
-      writter_id = @poster.user_id
-      @writter = User.find(writter_id)
       city_id = params[:id]
       @city = City.find_by(id: city_id)
       @post = @city.posts
 
+      # newer
+      @users = User.all
+      @user = User.find(params[:id])
+      users_post = @user.posts
+      writter_id = users_post.find(params[:id])
+      @writter = User.find(writter_id)
 
 
 
