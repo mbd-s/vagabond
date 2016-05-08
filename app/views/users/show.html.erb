@@ -1,9 +1,8 @@
 <div class="row">
   <div class="col-sm-6">
-    <h2><%= @user.first_name %> <%= @user.last_name %></h2>
     <div>
-      <img class="profile_img" src="<%= @user.avatar %>">
-      <br>
+      <img class="profile_img img-circle" src="<%= @user.image %>" >
+      <h2><%= @user.first_name %> <%= @user.last_name %></h2>
       <p><strong>Email:</strong> <%= @user.email %></p>
       <p><strong>Current City:</strong> <%= @city %></p>
       <p><strong>Joined:</strong> <%= @user.created_at.strftime("%B %e, %Y") %></p>
