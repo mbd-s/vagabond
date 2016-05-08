@@ -1,25 +1,16 @@
-<div class="background">
-<div class="jumbotron">
-      <div class="header">
-        <h1 class="display-3">Welcome to Vagabond</h1>
-        <p class="lead hero-header">
-          Description about the app.....
-        </p>
-      </div>
-    </div>
+<p>
+  Welcome to <strong>Vagabond</strong>.
+</p>
+
 <% if current_user %>
   <% for city in @cities %>
   <div>
-    <div class="text"><%= link_to "#{city.name}", city_path(city), class: 'city_name'%></div>
-<%= link_to image_tag(city.image, :width => 1465, :height => 600), city_path(city) %>
+    <%= link_to "#{city.name}", city_path(city)  %>
       <% end %>
-    </div>
     <% else %>
     <% for city in @cities %>
-    <div>
-      <div class="text"><%= "#{city.name}"%></div>
-      <%= image_tag(city.image, :width => 1465, :height => 600) %>
+    <li><%= "#{city.name}"  %></li>
     <% end %>
-</div>
+  </div>
+
 <% end %>
-</div>
