@@ -15,7 +15,6 @@
  */
 body {
   font-family: 'Noto Sans', sans-serif;
-  background-color: black;
 }
 .top-header {
   color: white;
@@ -24,6 +23,7 @@ body {
   padding-right: 20px;
   padding-bottom: 20px;
   text-align: right;
+  background-color: black;
 }
 .font_style {
   color: white;

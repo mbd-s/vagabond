@@ -1,15 +1,12 @@
 // Place all the styles related to the cities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-  .background {
-    background-color: white;
-  }
   .header {
     padding: 10px;
   }
   .jumbotron {
   position: relative;
-  background: black url("http://tobyharriman.com/wordpress/wp-content/uploads/2014/02/Fire_over_San_Francisco.jpg") center center;
+  background: white url("http://tobyharriman.com/wordpress/wp-content/uploads/2014/02/Fire_over_San_Francisco.jpg") center center;
   background-size: cover;
   width: 100%;
   height: 500px;
