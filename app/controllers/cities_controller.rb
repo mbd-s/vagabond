@@ -17,6 +17,12 @@ class CitiesController < ApplicationController
       writter_id = users_post.find(params[:id])
       @writter = User.find(writter_id)
 
+      @poster = Post.find(params[:id])
+      user_id = @post.user_id
+      @author = User.find(user_id)
+      user_city_id = @author.city_id
+      @user_city = City.find(user_city_id).name
+
 
 
       render :show
