@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :set_user, except: [:index, :new, :create]
+  #before_filter :set_user, except: [:index, :new, :create]
 
   def new
     if current_user
@@ -40,14 +40,14 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    city_id = params[:id]
-    @city = City.find_by(id: city_id)
+    @user = User.find(params[:user_id])
   end
 
   def update
+    @user = User.find(params[:user_id])
     post = Post.find(params[:id])
     post.update_attributes(post_params)
-    redirect_to city_post_path
+    redirect_to user_post_path
   end
 
   def destroy
