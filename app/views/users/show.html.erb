@@ -21,9 +21,6 @@
         <% @posts.reverse_each do |post| %>
             <h2><%= link_to "#{post.title}", city_post_path(post.city, post) %></h2>
             <p><%= post.content %></p>
-            <button type="button" class="btn btn-default" aria-label="Left Align">
-  <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-</button>
             <% if current_user && current_user == @user %>
               <%= link_to "Edit", "#{@user.id}/posts/#{post.id}/edit", class: 'btn btn-info' %>
               <%= link_to "Delete", "#{@user.id}/posts/#{post.id}", method: :delete, class: 'btn btn-danger', data: {confirm: "Are you sure you want to delete #{post.title}?"} %>
