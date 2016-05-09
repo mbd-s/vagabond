@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     post.city = @city
     if post.save
       redirect_to city_path(@city)
-      flash[:notice] = "Post saved to" + @city.name
+      flash[:notice] = "Post saved to " + @city.name
     else
       flash[:error] = post.errors.full_messages.join(", ")
       redirect_to new_city_post_path
