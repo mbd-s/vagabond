@@ -18,14 +18,15 @@
 
   <div class="col-sm-8">
     <div class="post">
-    <h1><strong>Posts:</strong></h1>
+      <h1>Lastest Posts:</h1>
       <% @posts.reverse_each do |post| %>
-          <h1><%= "#{post.title}"%></h1>
+          <h2><%= "#{post.title}"%></h2>
           <p><%= post.content %></p>
         <% if current_user && current_user == @user %>
-          <%= link_to "Delete", "#{@user.id}/posts/#{post.id}", method: :delete, class: 'btn btn-warning', data: {confirm: "Are you sure you want to delete #{post.title}?"} %>
-          <%= link_to "Edit", "#{@user.id}/posts/#{post.id}/edit", class: 'btn btn-warning' %>
+          <%= link_to "Edit", "#{@user.id}/posts/#{post.id}/edit", class: 'btn btn-info' %>
+          <%= link_to "Delete", "#{@user.id}/posts/#{post.id}", method: :delete, class: 'btn btn-danger', data: {confirm: "Are you sure you want to delete #{post.title}?"} %>
         <% end %>
+          <hr>
       <% end %>
   </div>
 </div>

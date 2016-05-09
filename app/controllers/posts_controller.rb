@@ -49,7 +49,7 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     post.update_attributes(post_params)
     flash[:notice] = "Successfully updated post."
-    redirect_to user_post_path
+    redirect_to user_path(@user)
   end
 
   def destroy
