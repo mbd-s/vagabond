@@ -9,7 +9,8 @@ class CitiesController < ApplicationController
       city_id = params[:id]
       @city = City.find_by(id: city_id)
       @post = @city.posts
-  
+      
+
       render :show
     else
       redirect_to root_path
