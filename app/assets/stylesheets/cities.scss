@@ -2,10 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
   .background {
-    background-color: black;
+    background-color: black
   }
   .header {
-    padding: 10px;
+    padding: 10px
   }
   .jumbotron {
   position: relative;
@@ -15,34 +15,34 @@
   height: 500px;
   overflow: hidden;
   color: white;
-  margin-bottom: 0px;
+  margin-bottom: 0px
 }
 
 .sign_up {
-  color: white;
+  color: white
 }
 .call_to_action {
   text-align: center;
-  font-size: 30px;
+  font-size: 30px
 }
 .sign_up:hover{
     background-color: transparent;
     color: white;
-    text-decoration: none;
+    text-decoration: none
 }
 .city_name {
   color: white;
   font-size: 200px;
-  text-align: center;
+  text-align: center
 }
 
 .city_name:hover{
     background-color: transparent;
     color: white;
-    text-decoration: none;
+    text-decoration: none
 }
 .outer {
-  position: relative;
+  position: relative
 }
 .city_text {
   position: absolute;
@@ -50,10 +50,10 @@
   left: 0;
   width: 100%;
   font-size: 200px;
-  text-align: center;
+  text-align: center
 }
 .city_text span {
-  color: white;
+  color: white
 }
 
 .add-post {
@@ -61,7 +61,7 @@
   top: 70%;
   left:43%;
   text-align: center;
-  font-size: 20px;
+  font-size: 20px
 }
 
 .city_home_text {
@@ -71,17 +71,17 @@
   width: 100%;
   font-size: 200px;
   text-align: center;
-  color: white;
+  color: white
 }
 
 .profile {
   text-align: center;
   font-size: 18px;
-  padding: 10px;
+  padding: 10px
 }
 p {
-  margin: 5px;
+  margin: 5px
 }
 .post {
-  margin-top: 10px;
+  margin-top: 10px
 }

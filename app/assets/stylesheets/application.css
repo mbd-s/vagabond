@@ -14,27 +14,24 @@
  *= require_self
  */
 body {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Noto Sans', sans-serif
 }
 .top-header {
   color: white;
   font-size: 20px;
   padding: 10px;
-  background-color: black;
+  background-color: black
 }
 .font_style {
-  color: white;
+  color: white
 }
 
 .font_style:hover{
     background-color: transparent;
     color: white;
-    text-decoration: none;
+    text-decoration: none
 }
 
 .flash-messages {
   color: red
-}
-.post_image {
-  width: 250px
 }
