@@ -11,26 +11,21 @@
     <div class="col-md-12">
     <!-- 2 columns, 1 for picture and 1 for posts -->
     <div class="one_post">
-    <div class="col-sm-4">
+    <div class="col-md-4 col-md">
       <div class="profile">
         <%= link_to image_tag(User.find_by_id(post.user_id).avatar, :width => 250, :class => 'img-circle'), user_path(User.find_by_id(post.user_id)) %>
         <p>Written By: <%= link_to ("#{User.find_by_id(post.user_id).first_name} #{User.find_by_id(post.user_id).last_name}"), user_path(User.find_by_id(post.user_id)) %> </p>
       </div>
     </div>
-
-    <div class="col-sm-8">
+    <div class="col-md-8 col-md">
       <div class="post">
       <h1><%= link_to post.title, city_post_path(@city, post) %></h1>
       <p>
         <span class='quiet'><small> <%= time_ago_in_words(post.created_at) %> ago </small></span>
       </p>
       <p><%= post.content %></p>
-
-
     </div>
-
   </div>
-
 </div>
   <% end %>
   </div>

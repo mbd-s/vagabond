@@ -18,7 +18,6 @@
 
   <div class="col-sm-8">
     <div class="post">
-    <h1><strong>Posts:</strong></h1>
       <% @posts.reverse_each do |post| %>
           <h1><%= link_to "#{post.title}", city_post_path(@city, post) %></h1>
           <p><%= post.content %></p>
