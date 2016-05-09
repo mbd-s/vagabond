@@ -3,12 +3,15 @@
   background-size: cover;
   height: 100vh
 }
+
 h3 {
   margin-top: 0px
 }
+
 .outer {
   position: relative
 }
+
 .login_form {
   border-radius: 20px;
   background-color: black;
@@ -18,6 +21,7 @@ h3 {
   left: 50%;
   transform: translate(-50%, 80%)
 }
+
 .login_fields {
   text-align: center;
   padding: 20px

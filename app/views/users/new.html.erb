@@ -5,14 +5,14 @@
         <h3>Sign Up</h3>
         <%= form_for @user do |f| %>
           <div>
-            <%= f.text_field :first_name, placeholder: "First Name", :required => true %>
+            <%= f.text_field :first_name, placeholder: "First name", :required => true %>
           </div>
           <br>
           <div>
-            <%= f.text_field :last_name, placeholder: "Last Name", :required => true %>
+            <%= f.text_field :last_name, placeholder: "Last name", :required => true %>
           </div>
           <div>
-            <h5>Select Current City:</h5>
+            <h5>Select current city:</h5>
             <%= f.collection_select(:city_id, City.all, :id, :name, {}, {:class=>'dropdown'}) %>
           </div>
           <br>
@@ -28,7 +28,7 @@
             <%= f.file_field :avatar, placeholder: "Avatar", class: 'avatar' %>
           </div>
           <br>
-          <%= f.submit "Sign Up", class: 'btn btn-warning'%>
+          <%= f.submit "Submit", class: 'btn btn-warning'%>
         <% end %>
       </div>
     </div>

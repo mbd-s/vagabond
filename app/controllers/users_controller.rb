@@ -46,19 +46,15 @@ class UsersController < ApplicationController
     end
   end
 
-  # Deleting user is a 'bonus' feature
-  # def destroy
-  #   @user = User.find_by_id(params[:id]).destroy
-  #   redirect_to root_path
-  # end
-
   private
 
   def user_params
     params.require(:user).permit(:email, :first_name, :last_name, :avatar, :password, :city_id)
   end
+
   def set_user
     user_id = params[:id]
     @user = User.find_by_id(user_id)
   end
+  
 end

@@ -1,12 +1,11 @@
 <div class='container'>
-<<<<<<< HEAD
   <div class="row">
     <div class="col-sm-4">
       <div class="profile">
         <img class="profile_img img-circle" src="<%= @user.avatar %>" >
         <p><%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %></p>
         <p><strong>Email:</strong> <%= @user.email %></p>
-        <p><strong>Current City:</strong> <%= @city %></p>
+        <p><strong>Current city:</strong> <%= @city %></p>
         <p><strong>Joined:</strong> <%= @user.created_at.strftime("%B %e, %Y") %></p>
         <% if current_user && current_user == @user %>
           <div>

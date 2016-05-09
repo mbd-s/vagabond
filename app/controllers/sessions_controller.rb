@@ -9,11 +9,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-    #confirm is an instance method of user (in the user model)
     @user = User.confirm(user_params)
     if @user
-      login(@user) # <-- login the user
-      redirect_to @user # <-- go to show
+      login(@user)
+      redirect_to @user
     else
       flash[:error] = "Incorrect email and/or password."
       redirect_to login_path
@@ -21,15 +20,13 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    logout # this method lives in the SessionsHelper!
+    logout
     redirect_to root_path
   end
 
   private
 
   def user_params
-    #this method is called when the user logs in, it looks up the user's record
-    #in †he db and validates that the password matches
     params.require(:user).permit(:email, :password)
   end
 

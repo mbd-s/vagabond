@@ -10,13 +10,16 @@
   background-size: cover;
   height: 100vh
 }
+
 h3 {
   margin-top: 0px;
   color: white
 }
+
 .outer {
   position: relative
 }
+
 .signup_form {
   border-radius: 20px;
   background-color: black;
@@ -26,10 +29,12 @@ h3 {
   left: 50%;
   transform: translate(-50%, 30%)
 }
+
 .signup_fields {
   text-align: center;
   padding: 20px
 }
+
 .avatar {
   width: 180px;
   color: white;
@@ -37,9 +42,11 @@ h3 {
   left: 53%;
   transform: translate(-50%, -50%)
 }
+
 .dropdown {
   width: 160px
 }
+
 h5 {
-  color: white;
+  color: white
 }

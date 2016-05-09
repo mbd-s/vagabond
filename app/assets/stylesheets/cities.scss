@@ -4,9 +4,11 @@
   .background {
     background-color: black
   }
+
   .header {
     padding: 10px
   }
+
   .jumbotron {
   position: relative;
   background: white url("http://tobyharriman.com/wordpress/wp-content/uploads/2014/02/Fire_over_San_Francisco.jpg") center center;
@@ -21,29 +23,34 @@
 .sign_up {
   color: white
 }
+
 .call_to_action {
   text-align: center;
   font-size: 30px
 }
-.sign_up:hover{
+
+.sign_up:hover {
     background-color: transparent;
     color: white;
     text-decoration: none
 }
+
 .city_name {
   color: white;
   font-size: 200px;
   text-align: center
 }
 
-.city_name:hover{
+.city_name:hover {
     background-color: transparent;
     color: white;
     text-decoration: none
 }
+
 .outer {
   position: relative
 }
+
 .city_text {
   position: absolute;
   top: 10%;
@@ -52,6 +59,7 @@
   font-size: 200px;
   text-align: center
 }
+
 .city_text span {
   color: white
 }
@@ -79,9 +87,11 @@
   font-size: 18px;
   padding: 10px
 }
+
 p {
   margin: 5px
 }
+
 .post {
   margin-top: 10px
 }
