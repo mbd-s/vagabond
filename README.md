@@ -13,7 +13,7 @@
 * CSS
 * Postgresql DB
 * Twitter Bootstrap
-* Paperclip
+* Uploadcare
 * Bcrypt
 * Heroku
 

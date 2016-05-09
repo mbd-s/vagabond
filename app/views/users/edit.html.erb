@@ -17,7 +17,10 @@
       </div>
       <div class="edit_avatar">
         <h5 class="edit_profile">Upload profile picture:</h5>
-        <%= f.file_field :avatar, placeholder: "Avatar", class: '' %>
+        <input type="hidden" role="uploadcare-uploader" name="user[image]"
+                data-crop="disabled"
+                data-preview-step="true"
+                data-images-only="true" >
       </div>
       <div>
         <center><%= f.submit "Save", class: "btn btn-success" %></center>
