@@ -13,7 +13,7 @@
  *= require_self
  */
 body {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: Helvetica, sans-serif;
   background-color: #fffcf6;
 }
 .top-header {
