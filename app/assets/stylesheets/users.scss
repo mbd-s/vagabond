@@ -1,12 +1,15 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.container {
+  margin-top: 15px
+}
 .profile_img {
   width:250px
 }
 
 .new_background {
-  background: url(vagabond-background.jpeg) no-repeat center center fixed;
+  background: url(https://images.unsplash.com/photo-1431576901776-e539bd916ba2?crop=entropy&fit=crop&fm=jpg&h=725&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1450) no-repeat center center fixed;
   background-size: cover;
   height: 100vh
 }
