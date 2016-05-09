@@ -13,9 +13,15 @@
         <div class="pull-left">
           <%= link_to "Home", root_path, class:'font_style' %>
           <% flash.each do |name, msg| %>
-            <span class="flash-messages">
-              <small> <%= name.capitalize %>: <%= msg %> </small>
-            </span>
+            <% if name == "notice"%>
+              <span>
+                <small id="flash-notice"> <%= name.capitalize %>: <%= msg %> </small>
+              </span>
+            <% elsif name == "error" %>
+              <span>
+                <small id="flash-error"> <%= name.capitalize %>: <%= msg %> </small>
+              </span>
+            <% end %>
           <% end %>
         </div>
       </div>
