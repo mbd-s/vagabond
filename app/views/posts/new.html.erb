@@ -1,6 +1,7 @@
 <center><h1>New Post</h1></center>
 <%= form_for [@city, @post] do |f| %>
-
+<div class="row">
+  <div class="well col-md-8 col-md-offset-2">
     <div class="form-group">
       <%= f.text_field :title, class: "form-control", placeholder: "Title", autofocus: true %>
     </div>
