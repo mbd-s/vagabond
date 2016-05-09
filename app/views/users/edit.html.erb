@@ -2,18 +2,23 @@
 <%= form_for @user do |f| %>
   <div>
     <%= f.text_field :first_name, placeholder: "First Name" %>
-  </div><br>
+  </div>
+  <br>
   <div>
     <%= f.text_field :last_name, placeholder: "Last Name" %>
-  </div><br>
+  </div>
+  <br>
   <div>
     <%= f.collection_select :city_id, City.all, :id, :name %>
-  </div><br>
+  </div>
+  <br>
   <div>
     <%= f.text_field :email, placeholder: "Email" %>
-  </div><br>
+  </div>
+  <br>
   <div>
     <%= f.file_field :avatar, placeholder: "Avatar" %>
-  </div><br>
+  </div>
+  <br>
   <%= f.submit %>
 <% end %>

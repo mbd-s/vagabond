@@ -59,6 +59,7 @@ class PostsController < ApplicationController
   end
 
   private
+
   def post_params
     params.require(:post).permit(:title, :content, :city_id, :user_id)
   end
@@ -67,4 +68,5 @@ class PostsController < ApplicationController
     user_id = params[:id]
     @user = User.find_by_id(user_id)
   end
+  
 end

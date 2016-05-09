@@ -1,31 +1,36 @@
 <div class="new_background">
   <div class="outer">
-  <div class="signup_form">
-    <div class="signup_fields">
-<h3>Sign Up</h3>
-<%= form_for @user do |f| %>
-  <div>
-    <%= f.text_field :first_name, placeholder: "First Name" %>
-  </div><br>
-  <div>
-    <%= f.text_field :last_name, placeholder: "Last Name" %>
+    <div class="signup_form">
+      <div class="signup_fields">
+        <h3>Sign Up</h3>
+        <%= form_for @user do |f| %>
+          <div>
+            <%= f.text_field :first_name, placeholder: "First name", :required => true %>
+          </div>
+          <br>
+          <div>
+            <%= f.text_field :last_name, placeholder: "Last name", :required => true %>
+          </div>
+          <div>
+            <h5>Select current city:</h5>
+            <%= f.collection_select(:city_id, City.all, :id, :name, {}, {:class=>'dropdown'}) %>
+          </div>
+          <br>
+          <div>
+            <%= f.text_field :email, placeholder: "Email", :required => true %>
+          </div>
+          <br>
+          <div>
+            <%= f.password_field :password, placeholder: "Password", :required => true %>
+          </div>
+          <br>
+          <div class='avatar-outer'>
+            <%= f.file_field :avatar, placeholder: "Avatar", class: 'avatar' %>
+          </div>
+          <br>
+          <%= f.submit "Submit", class: 'btn btn-warning'%>
+        <% end %>
+      </div>
+    </div>
   </div>
-  <div>
-    <h5>Select Current City:</h5>
-    <%= f.collection_select(:city_id, City.all, :id, :name, {}, {:class=>'dropdown'}) %>
-  </div><br>
-  <div>
-    <%= f.text_field :email, placeholder: "Email" %>
-  </div><br>
-  <div>
-    <%= f.password_field :password, placeholder: "Password" %>
-  </div><br>
-  <div class='avatar-outer'>
-    <%= f.file_field :avatar, placeholder: "Avatar", class: 'avatar' %>
-  </div><br>
-  <%= f.submit "Sign Up", class: 'btn btn-warning'%>
-<% end %>
-</div>
-</div>
-</div>
 </div>
