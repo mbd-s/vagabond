@@ -21,18 +21,21 @@ body {
   color: #fffcf6;
   font-size: 20px;
   padding: 10px;
-  background-color: black
+  background-color: black;
 }
 .font_style {
-  color: #fffcf6
+  color: #fffcf6;
 }
 
 .font_style:hover{
     background-color: transparent;
     color: #fffcf6;
-    text-decoration: none
+    text-decoration: none;
 }
 
-.flash-messages {
-  color: red
+#flash-error {
+  color: red;
+}
+#flash-notice {
+  color: green;
 }
