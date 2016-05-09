@@ -1,4 +1,5 @@
 <div class='container'>
+<<<<<<< HEAD
   <div class="row">
     <div class="col-sm-4">
       <div class="profile">
@@ -19,7 +20,7 @@
       <div class="post">
         <h1>Posts:</h1>
         <% @posts.reverse_each do |post| %>
-            <h2><%= "#{post.title}"%></h2>
+            <h2><%= link_to "#{post.title}", city_post_path(@city, post) %></h2>
             <p><%= post.content %></p>
             <% if current_user && current_user == @user %>
               <%= link_to "Edit", "#{@user.id}/posts/#{post.id}/edit", class: 'btn btn-info' %>
