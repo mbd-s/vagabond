@@ -16,7 +16,6 @@
         <%= f.collection_select(:city_id, City.all, :id, :name, {}, {:class=>'edit_dropdown'}) %>
       </div>
       <div class="edit_avatar">
-        <h5 class="edit_profile">Upload profile picture:</h5>
         <input type="hidden" role="uploadcare-uploader" name="user[image]"
                 data-crop="disabled"
                 data-preview-step="true"
