@@ -47,14 +47,14 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
     post = Post.find(params[:id])
     post.update_attributes(post_params)
-    flash[:notice] = "Successfully updated post."
+    flash[:notice] = "Post updated."
     redirect_to user_path(@user)
   end
 
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    flash[:notice] = "Successfully deleted post."
+    flash[:notice] = "Post deleted."
     redirect_to user_path(current_user)
   end
 
@@ -68,5 +68,5 @@ class PostsController < ApplicationController
     user_id = params[:id]
     @user = User.find_by_id(user_id)
   end
-  
+
 end
