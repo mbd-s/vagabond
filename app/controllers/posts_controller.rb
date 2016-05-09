@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  #before_filter :set_user, except: [:index, :new, :create]
 
   def new
     if current_user
