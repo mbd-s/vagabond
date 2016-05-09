@@ -1,34 +1,33 @@
 <div class='container'>
-<div class="row">
-  <div class="col-md-12">
-  <div class="col-sm-4">
-    <div class="profile">
-      <img class="profile_img img-circle" src="<%= @user.avatar %>" >
-      <p><%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %></p>
-      <p><strong>Email:</strong> <%= @user.email %></p>
-      <p><strong>Current City:</strong> <%= @city %></p>
-      <p><strong>Joined:</strong> <%= @user.created_at.strftime("%B %e, %Y") %></p>
-    <% if current_user && current_user == @user %>
-      <div>
-        <%= button_to "Edit Profile", edit_user_path(@user), method: 'get', class: 'btn btn-warning' %>
-      </div>
-    <% end %>
-  </div>
-  </div>
-
-  <div class="col-sm-8">
-    <div class="post">
-      <h1>Lastest Posts:</h1>
-      <% @posts.reverse_each do |post| %>
-          <h2><%= "#{post.title}"%></h2>
-          <p><%= post.content %></p>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="profile">
+        <img class="profile_img img-circle" src="<%= @user.avatar %>" >
+        <p><%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %></p>
+        <p><strong>Email:</strong> <%= @user.email %></p>
+        <p><strong>Current city:</strong> <%= @city %></p>
+        <p><strong>Joined:</strong> <%= @user.created_at.strftime("%B %e, %Y") %></p>
         <% if current_user && current_user == @user %>
-          <%= link_to "Edit", "#{@user.id}/posts/#{post.id}/edit", class: 'btn btn-info' %>
-          <%= link_to "Delete", "#{@user.id}/posts/#{post.id}", method: :delete, class: 'btn btn-danger', data: {confirm: "Are you sure you want to delete #{post.title}?"} %>
+          <div>
+            <%= button_to "Edit Profile", edit_user_path(@user), method: 'get', class: 'btn btn-warning' %>
+          </div>
         <% end %>
+      </div>
+    </div>
+
+    <div class="col-sm-8">
+      <div class="post">
+        <h1>Posts:</h1>
+        <% @posts.reverse_each do |post| %>
+            <h2><%= link_to "#{post.title}", city_post_path(@city, post) %></h2>
+            <p><%= post.content %></p>
+            <% if current_user && current_user == @user %>
+              <%= link_to "Edit", "#{@user.id}/posts/#{post.id}/edit", class: 'btn btn-info' %>
+              <%= link_to "Delete", "#{@user.id}/posts/#{post.id}", method: :delete, class: 'btn btn-danger', data: {confirm: "Are you sure you want to delete #{post.title}?"} %>
+            <% end %>
           <hr>
-      <% end %>
+        <% end %>
+      </div>
+    </div>
   </div>
-</div>
-</div>
 </div>

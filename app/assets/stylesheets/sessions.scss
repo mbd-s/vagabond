@@ -1,14 +1,17 @@
 .login_background {
   background: url(vagabond-background.jpeg) no-repeat center center fixed;
   background-size: cover;
-  height: 100vh;
+  height: 100vh
 }
+
 h3 {
-  margin-top: 0px;
+  margin-top: 0px
 }
+
 .outer {
-  position: relative;
+  position: relative
 }
+
 .login_form {
   border-radius: 20px;
   background-color: black;
@@ -16,9 +19,10 @@ h3 {
   height: auto;
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 80%);
+  transform: translate(-50%, 80%)
 }
+
 .login_fields {
   text-align: center;
-  padding: 20px;
+  padding: 20px
 }
