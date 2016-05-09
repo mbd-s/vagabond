@@ -18,7 +18,6 @@
 * Heroku
 
 ##Planned Features
-* Persisting images with AWS or Uploadcare
 * Add pretty urls
 * View all vagabond cities as markers/pins on a map on the site's homepage
 * Add pagination to the city posts
