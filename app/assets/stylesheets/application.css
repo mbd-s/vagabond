@@ -14,21 +14,22 @@
  *= require_self
  */
 body {
-  font-family: 'Noto Sans', sans-serif
+  font-family: 'Noto Sans', sans-serif;
+  background-color: #fffcf6;
 }
 .top-header {
-  color: white;
+  color: #fffcf6;
   font-size: 20px;
   padding: 10px;
   background-color: black
 }
 .font_style {
-  color: white
+  color: #fffcf6
 }
 
 .font_style:hover{
     background-color: transparent;
-    color: white;
+    color: #fffcf6;
     text-decoration: none
 }
 

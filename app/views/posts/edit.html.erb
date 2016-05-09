@@ -1,16 +1,15 @@
 <center><h1>Edit Post</h1></center>
-<hr>
 <%= form_for [@user, @post] do |f| %>
   <div class="row">
-    <div class="well col-md-8 col-md-offset-2">
+    <div class="well col-md-4 col-md-offset-4">
       <div class="form-group">
         <%= f.text_field :title, class: "form-control", placeholder: "Title", autofocus: true %>
       </div>
       <div class="form-group">
-        <%= f.text_area :content, class: "form-control", placeholder: "Description" %>
+        <%= f.text_area :content, class: "form-control", placeholder: "Description", class: 'form-control', rows: '8' %>
       </div>
-      <div class="form-group">
-        <%= f.submit "Save Post", class: "btn btn-block btn-success" %>
+      <div>
+        <center><%= f.submit "Save", class: "btn btn-success" %></center>
       </div>
     </div>
   </div>
