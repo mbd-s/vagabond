@@ -3,12 +3,10 @@
   <h1 class="city_text"><span><%= @city.name %></h1></span>
   <%= button_to "Add New Post", new_city_post_path(@city), method: 'get', class: 'btn btn-primary add-post' %>
 </div>
-
 <div class="container">
   <% @post.reverse_each do |post| %>
     <div class="row">
       <div class="col-md-4 col-md one_post profile">
-
           <%= link_to image_tag(User.find_by_id(post.user_id).avatar, :width => 250, :class => 'img-circle'), user_path(User.find_by_id(post.user_id)) %>
           <p>Written By: <%= link_to ("#{User.find_by_id(post.user_id).first_name} #{User.find_by_id(post.user_id).last_name}"), user_path(User.find_by_id(post.user_id)) %> </p>
       </div>
@@ -17,6 +15,6 @@
         <span class='quiet'><small> <%= time_ago_in_words(post.created_at) %> ago </small></span>
         <p><%= post.content %></p>
       </div>
-  <% end %>
     </div>
+    <% end %>
 </div>

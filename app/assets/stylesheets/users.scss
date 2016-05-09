@@ -10,10 +10,13 @@
   background-size: cover;
   height: 100vh
 }
+.edit_background {
+  height: 100vh;
+}
 
 h3 {
   margin-top: 0px;
-  color: white
+  color: #fffcf6
 }
 
 .outer {
@@ -37,7 +40,7 @@ h3 {
 
 .avatar {
   width: 180px;
-  color: white;
+  color: #fffcf6;
   position: absolute;
   left: 53%;
   transform: translate(-50%, -50%)
@@ -48,5 +51,22 @@ h3 {
 }
 
 h5 {
-  color: white
+  color: #fffcf6
+}
+.edit_profile {
+  color: black;
+  // text-align: center;
+}
+.edit_dropdown {
+  width: 200px;
+}
+.edit_avatar {
+  margin-bottom: 5%;
+}
+.avatar-outer {
+  margin-top: -5%;
+}
+
+.new_avatar {
+  margin-bottom: 5%;
 }

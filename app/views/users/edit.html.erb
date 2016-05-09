@@ -1,24 +1,28 @@
-<h2>Edit User Information</h2>
+<center><h1>Edit Profile</h1></center>
 <%= form_for @user do |f| %>
-  <div>
-    <%= f.text_field :first_name, placeholder: "First Name" %>
+  <div class="row">
+    <div class="well col-md-2 col-md-offset-5">
+      <div class="form-group">
+        <%= f.text_field :first_name, placeholder: "First Name", class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :last_name, placeholder: "Last Name", class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :email, placeholder: "Email", class: 'form-control' %>
+      </div>
+      <div>
+        <h5 class="edit_profile">Select current city:</h5>
+        <%= f.collection_select(:city_id, City.all, :id, :name, {}, {:class=>'edit_dropdown'}) %>
+      </div>
+      <div class="edit_avatar">
+        <h5 class="edit_profile">Upload profile picture:</h5>
+        <%= f.file_field :avatar, placeholder: "Avatar", class: '' %>
+      </div>
+      <div>
+        <center><%= f.submit "Save", class: "btn btn-success" %></center>
+      </div>
+      </div>
+    </div>
   </div>
-  <br>
-  <div>
-    <%= f.text_field :last_name, placeholder: "Last Name" %>
-  </div>
-  <br>
-  <div>
-    <%= f.collection_select :city_id, City.all, :id, :name %>
-  </div>
-  <br>
-  <div>
-    <%= f.text_field :email, placeholder: "Email" %>
-  </div>
-  <br>
-  <div>
-    <%= f.file_field :avatar, placeholder: "Avatar" %>
-  </div>
-  <br>
-  <%= f.submit %>
 <% end %>
