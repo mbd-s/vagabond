@@ -19,7 +19,7 @@
       <div class="post">
         <center><h1>Posts</h1></center>
         <% @posts.reverse_each do |post| %>
-            <h2><%= link_to "#{post.title}", city_post_path(@city, post) %></h2>
+            <h2><%= link_to "#{post.title}", city_post_path(post.city, post) %></h2>
             <p><%= post.content %></p>
             <% if current_user && current_user == @user %>
               <%= link_to "Edit", "#{@user.id}/posts/#{post.id}/edit", class: 'btn btn-info' %>
