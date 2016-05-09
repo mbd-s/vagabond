@@ -1,6 +1,9 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.post_page {
+  margin-bottom: 50px
+}
 .city_name {
   color: #fffcf6;
   font-size: 200px;
@@ -27,7 +30,7 @@
 }
 
 .profile {
-  text-align: center;
+  text-align: left;
   font-size: 18px
 }
 
