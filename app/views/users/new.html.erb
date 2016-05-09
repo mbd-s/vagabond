@@ -26,7 +26,10 @@
           <br>
           <div class='avatar-outer'>
             <h5 class="new_avatar">Upload profile picture:</h5>
-            <%= f.file_field :avatar, placeholder: "Avatar", class: 'avatar' %>
+            <input type="hidden" role="uploadcare-uploader" name="user[image]"
+                    data-crop="disabled"
+                    data-preview-step="true"
+                    data-images-only="true" >
           </div>
           <br>
           <%= f.submit "Submit", class: 'btn btn-warning'%>
