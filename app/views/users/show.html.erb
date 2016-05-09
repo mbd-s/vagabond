@@ -20,10 +20,11 @@
     <div class="post">
     <h1><strong>Posts:</strong></h1>
       <% @posts.reverse_each do |post| %>
-          <h1><%= link_to "#{post.title}", city_post_path(@city, post) %></h1>
+          <h1><%= "#{post.title}"%></h1>
           <p><%= post.content %></p>
         <% if current_user && current_user == @user %>
-        <%= link_to "Delete", "#{@user.id}/posts/#{post.id}", method: :delete, data: {confirm: "Are you sure you want to delete #{post.title}?"} %>
+          <%= link_to "Delete", "#{@user.id}/posts/#{post.id}", method: :delete, class: 'btn btn-warning', data: {confirm: "Are you sure you want to delete #{post.title}?"} %>
+          <%= link_to "Edit", "#{@user.id}/posts/#{post.id}/edit", class: 'btn btn-warning' %>
         <% end %>
       <% end %>
   </div>
